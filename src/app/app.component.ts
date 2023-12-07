@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { SHELL } from '@crypto-demo/shell';
-import { CURRENCY } from '@crypto-demo/currency';
+import { SHELL } from '@shell';
+import { CURRENCY } from '@currency';
 
 
 @Component({

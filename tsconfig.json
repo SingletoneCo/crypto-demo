@@ -24,8 +24,8 @@
       "dom"
     ],
     "paths": {
-      "@crypto-demo/shell": ["src/app/shell/index.ts"],
-      "@crypto-demo/currency": ["src/app/currency/index.ts"]
+      "@shell": ["./src/app/shell/index.ts"],
+      "@currency": ["./src/app/currency/index.ts"]
     }
   },
   "angularCompilerOptions": {
