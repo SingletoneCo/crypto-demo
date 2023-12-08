@@ -1,0 +1,47 @@
+@import "../../../styles/theme-colors";
+
+.toolbar {
+  height: 4.3rem;
+  background-color: $theme-white;
+  border-bottom: $theme-light-grey 1px solid;
+
+  .toolbar-row {
+    height: 100%;
+    padding: 0;
+
+    .logo {
+      margin-left: 0.75rem;
+    }
+
+    span {
+      margin-left: 1.5rem;
+      color: $theme-dark-grey;
+      font-size: 1rem;
+    }
+
+    button {
+      height: 1.9rem;
+      margin-left: 0.5rem;
+      padding: 0 1.625rem;
+      border-radius: 0.5rem;
+
+      &.login-button {
+        color: $theme-purple;
+        border: $theme-purple 1px solid;
+      }
+
+      &.signup-button {
+        background-color: $theme-purple;
+        color: $theme-white;
+      }
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+
+
+
