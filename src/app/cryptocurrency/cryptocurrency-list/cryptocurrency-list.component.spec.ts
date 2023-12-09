@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CurrencyListComponent } from './currency-list.component';
+import { CryptocurrencyListComponent } from './cryptocurrency-list.component';
 
 describe('CurrencyListComponent', () => {
-  let component: CurrencyListComponent;
-  let fixture: ComponentFixture<CurrencyListComponent>;
+  let component: CryptocurrencyListComponent;
+  let fixture: ComponentFixture<CryptocurrencyListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CurrencyListComponent]
+      imports: [CryptocurrencyListComponent]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(CurrencyListComponent);
+
+    fixture = TestBed.createComponent(CryptocurrencyListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

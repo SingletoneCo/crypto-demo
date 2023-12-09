@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { SHELL } from '@shell';
-import { CURRENCY } from '@currency';
+import { CRYPTOCURRENCY } from './cryptocurrency';
 
 
 @Component({
@@ -12,11 +12,11 @@ import { CURRENCY } from '@currency';
     CommonModule,
     RouterOutlet,
     SHELL,
-    CURRENCY
+    CRYPTOCURRENCY
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'crypto-demo';
+
 }
