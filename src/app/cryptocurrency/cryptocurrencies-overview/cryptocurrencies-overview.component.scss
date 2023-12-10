@@ -1,0 +1,17 @@
+@import "../../../styles/theme-colors";
+
+.actual-market-status {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 400;
+  color: $theme-dark-grey;
+
+  .increase {
+    color: $success;
+  }
+
+  .read-more-link {
+    color: $theme-purple;
+    text-decoration: underline;
+  }
+}

@@ -4,6 +4,8 @@ import {
   CryptocurrenciesOverviewComponent
 } from './cryptocurrency/cryptocurrencies-overview/cryptocurrencies-overview.component';
 import { cryptocurrenciesFeature } from './store/reducers/cryptocurrencies.reducer';
+import { provideEffects } from '@ngrx/effects';
+import { CryptocurrenciesEffects } from './store/effects/cryptocurrencies.effects';
 
 export const routes: Routes = [
   {
@@ -13,7 +15,8 @@ export const routes: Routes = [
   }, {
     path: 'cryptocurrencies',
     providers: [
-      provideState(cryptocurrenciesFeature)
+      provideState(cryptocurrenciesFeature),
+      provideEffects(CryptocurrenciesEffects)
     ],
     component: CryptocurrenciesOverviewComponent
   }, {
@@ -21,3 +24,4 @@ export const routes: Routes = [
     redirectTo: 'cryptocurrencies'
   }
 ];
+
