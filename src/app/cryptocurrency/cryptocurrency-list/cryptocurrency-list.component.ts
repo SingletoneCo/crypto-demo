@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Cryptocurrency } from '../../models/cryptocurrency.model';
 import { Store } from '@ngrx/store';
-import { loadCryptocurrencies } from '../../store/actions/cryptocurrencies.action';
-import { getCryptocurrencies } from '../../store/reducers/cryptocurrencies.reducer';
+import { loadCryptocurrencies, toggleCurrencyFavouriteParam } from '../../store/actions/cryptocurrencies.action';
+import { selectCryptocurrencies } from '../../store/reducers/cryptocurrencies.reducer';
 import { MatTableModule } from '@angular/material/table';
 import { AsyncPipe, CurrencyPipe, DecimalPipe, LowerCasePipe, NgIf, PercentPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -26,7 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class CryptocurrencyListComponent implements OnInit {
 
-  public cryptocurrencies$: Observable<Array<Cryptocurrency>> = this.store.select(getCryptocurrencies)
+  public cryptocurrencies$: Observable<Array<Cryptocurrency>> = this.store.select(selectCryptocurrencies)
 
   public displayedColumns: Array<string> = ['favourite', 'rank', 'name', 'price', 'hour', 'day', 'week', 'marketCap', 'volumeDay', 'circulatingSupply'];
 
@@ -36,7 +36,9 @@ export class CryptocurrencyListComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(loadCryptocurrencies())
+  }
 
-    this.cryptocurrencies$.subscribe(resp => console.log(resp))
+  public toggleFavouriteProperty(cryptocurrencyId: string) {
+    this.store.dispatch(toggleCurrencyFavouriteParam({ id: cryptocurrencyId }))
   }
 }

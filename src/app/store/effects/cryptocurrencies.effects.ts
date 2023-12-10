@@ -5,8 +5,9 @@ import { CryptocurrenciesService } from '../../services/cryptocurrencies.service
 import {
   loadCryptocurrencies,
   loadCryptocurrenciesFail,
-  loadCryptocurrenciesSuccess
+  loadCryptocurrenciesSuccess, toggleCurrencyFavouriteParam
 } from '../actions/cryptocurrencies.action';
+import { Cryptocurrency } from '../../models/cryptocurrency.model';
 
 @Injectable()
 export class CryptocurrenciesEffects {
@@ -15,7 +16,14 @@ export class CryptocurrenciesEffects {
       ofType(loadCryptocurrencies),
       exhaustMap(() => this.cryptocurrenciesService.getAll()
           .pipe(
-              map(cryptocurrencies => loadCryptocurrenciesSuccess({ payload: cryptocurrencies })),
+              map((cryptocurrencies: Array<Cryptocurrency>) => cryptocurrencies.map(currency => {
+                // of course normally I wouldn't assign false as a value, it would be part of db entity
+                return {
+                  ...currency,
+                  favourite: false
+                }
+              })),
+              map((cryptocurrencies: Array<Cryptocurrency>) => loadCryptocurrenciesSuccess({ payload: cryptocurrencies })),
               catchError(error => of(loadCryptocurrenciesFail({ payload: error })))
           ))
   ))

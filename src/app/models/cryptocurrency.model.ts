@@ -10,6 +10,7 @@ export interface Cryptocurrency {
   first_data_at: string;
   last_updated: string;
   quotes: Quotes;
+  favourite?: boolean;
 }
 
 interface Quotes {

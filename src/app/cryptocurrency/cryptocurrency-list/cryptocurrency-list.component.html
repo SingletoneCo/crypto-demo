@@ -1,8 +1,8 @@
 <!--
- TODO: change when finished
+Webstorm doesn't support this syntax yet ;(
 @if (cryptocurrencies$ | async; as cryptocurrencies) {
 
-}
+} else {}
 -->
 
 <ng-container *ngIf="cryptocurrencies$ | async as cryptocurrencies">
@@ -11,7 +11,21 @@
     <ng-container matColumnDef="favourite">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="star" class="favourite-icon"></mat-icon>
+        <div (click)="toggleFavouriteProperty(element.id)">
+          <!--@if (element.favourite) {
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="star" class="favourite-icon"></mat-icon>
+          } else {
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="star_border" class="favourite-icon"></mat-icon>
+          }-->
+
+          <ng-container *ngIf="element.favourite; else notFavourite">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="star" class="favourite-icon"></mat-icon>
+          </ng-container>
+          <ng-template #notFavourite>
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="star_border" class="favourite-icon"></mat-icon>
+          </ng-template>
+
+        </div>
       </td>
     </ng-container>
 
