@@ -11,6 +11,10 @@
 
     .logo {
       margin-left: 0.75rem;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     span {
@@ -38,6 +42,13 @@
 
     .spacer {
       flex: 1 1 auto;
+    }
+
+    .link {
+      &:hover {
+        cursor: pointer;
+        color: $theme-purple;
+      }
     }
   }
 }

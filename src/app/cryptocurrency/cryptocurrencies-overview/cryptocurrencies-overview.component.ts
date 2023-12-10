@@ -10,4 +10,5 @@ import { CryptocurrencyListComponent } from '../cryptocurrency-list/cryptocurren
   templateUrl: './cryptocurrencies-overview.component.html',
   styleUrl: './cryptocurrencies-overview.component.scss'
 })
-export class CryptocurrenciesOverviewComponent {}
+export class CryptocurrenciesOverviewComponent {
+}

@@ -1,10 +1,10 @@
-// TABLE
 tr.mat-mdc-header-row {
   height: 1.2rem;
 }
 
 tr.mat-mdc-row {
   height: 2.8rem;
+  cursor: pointer;
 }
 
 th.mat-mdc-header-cell {
@@ -19,5 +19,6 @@ th.align-right, td.align-right {
 td {
   .element-name {
     font-weight: 700;
+    margin: 0 0.5rem;
   }
 }

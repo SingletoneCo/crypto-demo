@@ -1,5 +1,5 @@
 import { Cryptocurrency } from '../../models/cryptocurrency.model';
-import { createFeature, createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
+import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 import * as CryptocurrenciesActions from '../actions/cryptocurrencies.action';
 
 
@@ -16,8 +16,6 @@ export const initialState: CryptocurrenciesState = {
   loaded: false,
   loading: false
 }
-
-const featureKey: string = 'cryptocurrencies';
 
 export const cryptocurrenciesFeature = createFeature({
   name: 'cryptocurrencies',
@@ -47,7 +45,11 @@ export const cryptocurrenciesFeature = createFeature({
 
 export const {
   name,
-  selectCryptocurrencies
-} = cryptocurrenciesFeature
+  selectCryptocurrencies,
+    selectLoaded
+} = cryptocurrenciesFeature;
+export const selectCryptocurrencyById = (id: string) => createSelector(
+    selectCryptocurrencies, (cryptocurrencies) => cryptocurrencies.find(cryptocurrency => cryptocurrency.id === id)
+)
 
 

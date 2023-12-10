@@ -5,9 +5,9 @@
   cursor: pointer;
 }
 
-.cryptoicon {
-  height: 1rem;
-  width: 1rem;
+.cryptocurrency-name-container {
+  display: flex;
+  align-self: end;
 }
 
 .cryptocurrency-symbol {

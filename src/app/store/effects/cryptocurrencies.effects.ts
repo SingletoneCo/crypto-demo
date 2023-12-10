@@ -5,7 +5,7 @@ import { CryptocurrenciesService } from '../../services/cryptocurrencies.service
 import {
   loadCryptocurrencies,
   loadCryptocurrenciesFail,
-  loadCryptocurrenciesSuccess, toggleCurrencyFavouriteParam
+  loadCryptocurrenciesSuccess
 } from '../actions/cryptocurrencies.action';
 import { Cryptocurrency } from '../../models/cryptocurrency.model';
 

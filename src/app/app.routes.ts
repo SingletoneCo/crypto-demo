@@ -1,8 +1,5 @@
 import { Routes } from '@angular/router';
 import { provideState } from '@ngrx/store';
-import {
-  CryptocurrenciesOverviewComponent
-} from './cryptocurrency/cryptocurrencies-overview/cryptocurrencies-overview.component';
 import { cryptocurrenciesFeature } from './store/reducers/cryptocurrencies.reducer';
 import { provideEffects } from '@ngrx/effects';
 import { CryptocurrenciesEffects } from './store/effects/cryptocurrencies.effects';
@@ -18,7 +15,7 @@ export const routes: Routes = [
       provideState(cryptocurrenciesFeature),
       provideEffects(CryptocurrenciesEffects)
     ],
-    component: CryptocurrenciesOverviewComponent
+    loadChildren: () => import('./cryptocurrency/cryptocurrencies.routes').then(m => m.CRYPTOCURRENCIES_ROUTES)
   }, {
     path: '**',
     redirectTo: 'cryptocurrencies'

@@ -7,6 +7,8 @@ import { selectCryptocurrencies } from '../../store/reducers/cryptocurrencies.re
 import { MatTableModule } from '@angular/material/table';
 import { AsyncPipe, CurrencyPipe, DecimalPipe, LowerCasePipe, NgIf, PercentPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
+import { CryptocurrencyIconComponent } from '../cryptocurrency-icon/cryptocurrency-icon.component';
 
 @Component({
   selector: 'app-cryptocurrency-list',
@@ -19,7 +21,9 @@ import { MatIconModule } from '@angular/material/icon';
     LowerCasePipe,
     CurrencyPipe,
     DecimalPipe,
-    PercentPipe
+    PercentPipe,
+    RouterLink,
+    CryptocurrencyIconComponent
   ],
   templateUrl: './cryptocurrency-list.component.html',
   styleUrl: './cryptocurrency-list.component.scss'
