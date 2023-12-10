@@ -9,6 +9,8 @@ import { AsyncPipe, CurrencyPipe, DecimalPipe, LowerCasePipe, NgIf, PercentPipe 
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { CryptocurrencyIconComponent } from '../cryptocurrency-icon/cryptocurrency-icon.component';
+import { SpaceNumberDelimiterPipePipe } from '../../pipes/space-number-delimiter.pipe';
+import { PositiveNumberMarkPipe } from '../../pipes/positive-number-mark.pipe';
 
 @Component({
   selector: 'app-cryptocurrency-list',
@@ -23,7 +25,9 @@ import { CryptocurrencyIconComponent } from '../cryptocurrency-icon/cryptocurren
     DecimalPipe,
     PercentPipe,
     RouterLink,
-    CryptocurrencyIconComponent
+    CryptocurrencyIconComponent,
+    SpaceNumberDelimiterPipePipe,
+    PositiveNumberMarkPipe
   ],
   templateUrl: './cryptocurrency-list.component.html',
   styleUrl: './cryptocurrency-list.component.scss'

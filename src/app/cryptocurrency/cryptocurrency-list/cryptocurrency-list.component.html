@@ -41,37 +41,37 @@ Webstorm doesn't support this syntax yet ;(
 
     <ng-container matColumnDef="price">
       <th mat-header-cell *matHeaderCellDef class="align-right">Price</th>
-      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.price | currency }}</td>
+      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.price | currency | spaceNumberDelimiter  }}</td>
     </ng-container>
 
     <ng-container matColumnDef="hour">
       <th mat-header-cell *matHeaderCellDef class="align-right">1h%</th>
-      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.percent_change_1h | percent }}</td>
+      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.percent_change_1h | percent | spaceNumberDelimiter | positiveNumberMark }}</td>
     </ng-container>
 
     <ng-container matColumnDef="day">
       <th mat-header-cell *matHeaderCellDef class="align-right">24h%</th>
-      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.percent_change_24h | percent }}</td>
+      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.percent_change_24h | percent | spaceNumberDelimiter  }}</td>
     </ng-container>
 
     <ng-container matColumnDef="week">
       <th mat-header-cell *matHeaderCellDef class="align-right">7d%</th>
-      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.percent_change_7d | percent }}</td>
+      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.percent_change_7d | percent | spaceNumberDelimiter  }}</td>
     </ng-container>
 
     <ng-container matColumnDef="marketCap">
       <th mat-header-cell *matHeaderCellDef class="align-right">Market Cap</th>
-      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.market_cap | number }}</td>
+      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.market_cap | spaceNumberDelimiter }}</td>
     </ng-container>
 
     <ng-container matColumnDef="volumeDay">
       <th mat-header-cell *matHeaderCellDef class="align-right">Volume (24h)</th>
-      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.volume_24h | number }}</td>
+      <td mat-cell *matCellDef="let element" class="align-right">{{ element.quotes.USD.volume_24h | spaceNumberDelimiter }}</td>
     </ng-container>
 
     <ng-container matColumnDef="circulatingSupply">
       <th mat-header-cell *matHeaderCellDef class="align-right">Circulating Supply</th>
-      <td mat-cell *matCellDef="let element" class="align-right">{{ element.circulating_supply | number }}</td>
+      <td mat-cell *matCellDef="let element" class="align-right">{{ element.circulating_supply | spaceNumberDelimiter }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

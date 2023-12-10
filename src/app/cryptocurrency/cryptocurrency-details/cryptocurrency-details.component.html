@@ -35,15 +35,15 @@
         </p>
         <p>
           <span class="property-name">Circulating supply:</span>
-          {{ cryptocurrency.circulating_supply }}
+          {{ cryptocurrency.circulating_supply | spaceNumberDelimiter }}
         </p>
         <p>
           <span class="property-name">Total supply:</span>
-          {{ cryptocurrency.total_supply }}
+          {{ cryptocurrency.total_supply | spaceNumberDelimiter }}
         </p>
         <p>
           <span class="property-name">Max supply:</span>
-          {{ cryptocurrency.max_supply }}
+          {{ cryptocurrency.max_supply | spaceNumberDelimiter }}
         </p>
       </mat-expansion-panel>
 
@@ -55,63 +55,63 @@
         </mat-expansion-panel-header>
         <p>
           <span class="property-name">Price:</span>
-          {{ cryptocurrency.quotes.USD.price | currency }}
+          {{ cryptocurrency.quotes.USD.price | currency | spaceNumberDelimiter }}
         </p>
         <p>
           <span class="property-name">Volume 24h:</span>
-          {{ cryptocurrency.quotes.USD.volume_24h }}
+          {{ cryptocurrency.quotes.USD.volume_24h | spaceNumberDelimiter }}
         </p>
         <p>
           <span class="property-name">Volume 24h change 24h:</span>
-          {{ cryptocurrency.quotes.USD.volume_24h_change_24h }}
+          {{ cryptocurrency.quotes.USD.volume_24h_change_24h | spaceNumberDelimiter }}
         </p>
         <p>
           <span class="property-name">Market capacity:</span>
-          {{ cryptocurrency.quotes.USD.market_cap }}
+          {{ cryptocurrency.quotes.USD.market_cap | spaceNumberDelimiter }}
         </p>
         <p>
           <span class="property-name">Market capacity change 24h:</span>
-          {{ cryptocurrency.quotes.USD.market_cap_change_24h }}
+          {{ cryptocurrency.quotes.USD.market_cap_change_24h | spaceNumberDelimiter }}
         </p>
         <p>
           <span class="property-name">Percent change 15m:</span>
-          {{ cryptocurrency.quotes.USD.percent_change_15m | percent }}
+          {{ cryptocurrency.quotes.USD.percent_change_15m | percent | spaceNumberDelimiter  }}
         </p>
         <p>
           <span class="property-name">Percent change 30m:</span>
-          {{ cryptocurrency.quotes.USD.percent_change_30m | percent }}
+          {{ cryptocurrency.quotes.USD.percent_change_30m | percent | spaceNumberDelimiter  }}
         </p>
         <p>
           <span class="property-name">Percent change 1h:</span>
-          {{ cryptocurrency.quotes.USD.percent_change_1h | percent }}
+          {{ cryptocurrency.quotes.USD.percent_change_1h | percent | spaceNumberDelimiter  }}
         </p>
         <p>
           <span class="property-name">Percent change 6h:</span>
-          {{ cryptocurrency.quotes.USD.percent_change_6h | percent }}
+          {{ cryptocurrency.quotes.USD.percent_change_6h | percent | spaceNumberDelimiter  }}
         </p>
         <p>
           <span class="property-name">Percent change 12h:</span>
-          {{ cryptocurrency.quotes.USD.percent_change_12h | percent }}
+          {{ cryptocurrency.quotes.USD.percent_change_12h | percent | spaceNumberDelimiter  }}
         </p>
         <p>
           <span class="property-name">Percent change 24h:</span>
-          {{ cryptocurrency.quotes.USD.percent_change_24h | percent }}
+          {{ cryptocurrency.quotes.USD.percent_change_24h | percent | spaceNumberDelimiter  }}
         </p>
         <p>
           <span class="property-name">Percent change 7d:</span>
-          {{ cryptocurrency.quotes.USD.percent_change_7d | percent }}
+          {{ cryptocurrency.quotes.USD.percent_change_7d | percent | spaceNumberDelimiter  }}
         </p>
         <p>
           <span class="property-name">Percent change 30d:</span>
-          {{ cryptocurrency.quotes.USD.percent_change_30d | percent }}
+          {{ cryptocurrency.quotes.USD.percent_change_30d | percent | spaceNumberDelimiter  }}
         </p>
         <p>
           <span class="property-name">Percent change 1y:</span>
-          {{ cryptocurrency.quotes.USD.percent_change_1y | percent }}
+          {{ cryptocurrency.quotes.USD.percent_change_1y | percent | spaceNumberDelimiter  }}
         </p>
         <p>
           <span class="property-name">ATH price:</span>
-          {{ cryptocurrency.quotes.USD.ath_price }}
+          {{ cryptocurrency.quotes.USD.ath_price | currency | spaceNumberDelimiter  }}
         </p>
         <p>
           <span class="property-name">ATH date:</span>
@@ -119,7 +119,7 @@
         </p>
         <p>
           <span class="property-name">Percent from price ATH:</span>
-          {{ cryptocurrency.quotes.USD.percent_from_price_ath | percent }}
+          {{ cryptocurrency.quotes.USD.percent_from_price_ath | percent | spaceNumberDelimiter  }}
         </p>
       </mat-expansion-panel>
     </mat-accordion>

@@ -16,20 +16,21 @@ export class CryptocurrenciesEffects {
       ofType(loadCryptocurrencies),
       exhaustMap(() => this.cryptocurrenciesService.getAll()
           .pipe(
-              map((cryptocurrencies: Array<Cryptocurrency>) => cryptocurrencies.map(currency => {
+              map((cryptocurrencies: Array<Cryptocurrency>) => cryptocurrencies.map((currency: Cryptocurrency) => {
                 // of course normally I wouldn't assign false as a value, it would be part of db entity
                 return {
                   ...currency,
                   favourite: false
                 }
               })),
-              map((cryptocurrencies: Array<Cryptocurrency>) => loadCryptocurrenciesSuccess({ payload: cryptocurrencies })),
-              catchError(error => of(loadCryptocurrenciesFail({ payload: error })))
+              map((cryptocurrencies: Array<Cryptocurrency>) => loadCryptocurrenciesSuccess({ cryptocurrencies })),
+              catchError(error => of(loadCryptocurrenciesFail({ error })))
           ))
   ))
 
   constructor(
-    private actions$: Actions,
-    private cryptocurrenciesService: CryptocurrenciesService
-  ) {}
+      private actions$: Actions,
+      private cryptocurrenciesService: CryptocurrenciesService
+  ) {
+  }
 }

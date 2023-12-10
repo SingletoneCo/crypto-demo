@@ -21,9 +21,9 @@ export const cryptocurrenciesFeature = createFeature({
   name: 'cryptocurrencies',
   reducer: createReducer(
       initialState,
-      on(CryptocurrenciesActions.loadCryptocurrenciesSuccess, (state, { payload }) => ({
+      on(CryptocurrenciesActions.loadCryptocurrenciesSuccess, (state, { cryptocurrencies }) => ({
         ...state,
-        cryptocurrencies: payload,
+        cryptocurrencies,
         loading: false,
         loaded: true
       })),
@@ -33,7 +33,7 @@ export const cryptocurrenciesFeature = createFeature({
       })),
       on(CryptocurrenciesActions.toggleCurrencyFavouriteParam, (state, { id }) => ({
         ...state,
-        cryptocurrencies: state.cryptocurrencies.map((cryptocurrency) => {
+        cryptocurrencies: state.cryptocurrencies.map((cryptocurrency: Cryptocurrency) => {
           return cryptocurrency.id === id ? {
             ...cryptocurrency,
             favourite: !cryptocurrency.favourite
@@ -46,10 +46,11 @@ export const cryptocurrenciesFeature = createFeature({
 export const {
   name,
   selectCryptocurrencies,
-    selectLoaded
+  selectLoaded
 } = cryptocurrenciesFeature;
 export const selectCryptocurrencyById = (id: string) => createSelector(
-    selectCryptocurrencies, (cryptocurrencies) => cryptocurrencies.find(cryptocurrency => cryptocurrency.id === id)
+    selectCryptocurrencies, (cryptocurrencies: Array<Cryptocurrency>) => cryptocurrencies
+        .find((cryptocurrency: Cryptocurrency) => cryptocurrency.id === id)
 )
 
 
