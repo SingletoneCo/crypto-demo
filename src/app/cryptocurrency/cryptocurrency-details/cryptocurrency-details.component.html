@@ -1,8 +1,21 @@
 <ng-container *ngIf="cryptocurrency$ | async as cryptocurrency">
   <h1 class="page-title">
-    <app-cryptocurrency-icon class="cryptocurrency-icon" [cryptocurrencySymbol]="cryptocurrency.symbol"
-                             [sizeInRems]="2"></app-cryptocurrency-icon>
-    <div> {{ cryptocurrency.name }} </div>
+    <div class="go-back-icon" (click)="goBack()">
+      <mat-icon aria-hidden="false" aria-label="Go back icon" fontIcon="arrow_back_ios_new"></mat-icon>
+    </div>
+    <div class="cryptocurrency-name-container">
+      <app-cryptocurrency-icon class="cryptocurrency-icon" [cryptocurrencySymbol]="cryptocurrency.symbol"
+                               [sizeInRems]="2"></app-cryptocurrency-icon>
+      {{ cryptocurrency.name }}
+    </div>
+    <div (click)="toggleFavouriteProperty(cryptocurrency.id)" class="favourite-icon">
+      <ng-container *ngIf="cryptocurrency.favourite; else notFavourite">
+        <mat-icon aria-hidden="false" aria-label="Favourite icon" fontIcon="star"></mat-icon>
+      </ng-container>
+      <ng-template #notFavourite>
+        <mat-icon aria-hidden="false" aria-label="Favourite icon" fontIcon="star_border"></mat-icon>
+      </ng-template>
+    </div>
   </h1>
 
   <div class="page-content">

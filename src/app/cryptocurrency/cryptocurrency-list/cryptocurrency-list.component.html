@@ -11,12 +11,12 @@ Webstorm doesn't support this syntax yet ;(
     <ng-container matColumnDef="favourite">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let element">
-        <div (click)="toggleFavouriteProperty(element.id)">
+        <div (click)="toggleFavouriteProperty(element.id)" class="favourite-icon">
           <ng-container *ngIf="element.favourite; else notFavourite">
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="star" class="favourite-icon"></mat-icon>
+            <mat-icon aria-hidden="false" aria-label="Favourite icon" fontIcon="star"></mat-icon>
           </ng-container>
           <ng-template #notFavourite>
-            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="star_border" class="favourite-icon"></mat-icon>
+            <mat-icon aria-hidden="false" aria-label="Favourite icon" fontIcon="star_border"></mat-icon>
           </ng-template>
 
         </div>

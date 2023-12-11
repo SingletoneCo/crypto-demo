@@ -1,8 +1,32 @@
-.cryptocurrency-icon {
-  display: flex;
-  align-self: center;
-  margin-right: 1rem;
+@import "../../../styles/theme-colors";
+
+.page-title {
+  justify-content: space-between;
+
+  .cryptocurrency-name-container {
+    display: flex;
+    align-self: end;
+    .cryptocurrency-icon {
+      margin-right: 0.5rem;
+      display: flex;
+      align-self: center;
+    }
+  }
+
+  .go-back-icon {
+    transform: scale(1.5);
+    color: $theme-light-grey;
+    cursor: pointer;
+  }
+
+  .favourite-icon {
+    transform: scale(1.5);
+    color: $theme-purple;
+    cursor: pointer;
+  }
 }
+
+
 
 .page-content {
   .property-name {

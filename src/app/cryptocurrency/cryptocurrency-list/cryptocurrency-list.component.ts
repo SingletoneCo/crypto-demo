@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { Cryptocurrency } from '../../models/cryptocurrency.model';
 import { Store } from '@ngrx/store';
 import { loadCryptocurrencies, toggleCurrencyFavouriteParam } from '../../store/actions/cryptocurrencies.action';
-import { selectCryptocurrencies } from '../../store/reducers/cryptocurrencies.reducer';
+import { selectCryptocurrencies, selectLoaded } from '../../store/reducers/cryptocurrencies.reducer';
 import { MatTableModule } from '@angular/material/table';
 import { AsyncPipe, CurrencyPipe, DecimalPipe, LowerCasePipe, NgIf, PercentPipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,7 +30,7 @@ import { PositiveNumberMarkPipe } from '../../pipes/positive-number-mark.pipe';
     PositiveNumberMarkPipe
   ],
   templateUrl: './cryptocurrency-list.component.html',
-  styleUrl: './cryptocurrency-list.component.scss'
+  styleUrl: './cryptocurrency-list.component.scss',
 })
 export class CryptocurrencyListComponent implements OnInit {
 
@@ -43,7 +43,11 @@ export class CryptocurrencyListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.store.dispatch(loadCryptocurrencies())
+    this.store.select(selectLoaded).pipe(
+        take(1)
+    ).subscribe((isLoaded: boolean) => {
+      if (!isLoaded) this.store.dispatch(loadCryptocurrencies())
+    })
   }
 
   public toggleFavouriteProperty(cryptocurrencyId: string) {

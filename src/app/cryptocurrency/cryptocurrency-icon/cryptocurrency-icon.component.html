@@ -1,6 +1,2 @@
-<ng-container *ngIf="iconPath$ | async as icon">
-  <img [src]="icon" alt="icon"
-       [ngStyle]="{ 'width': sizeInRems + 'rem', 'height': sizeInRems + 'rem' }"/>
-</ng-container>
-
-
+<img [src]='iconSource' alt="icon" (error)="fallbackToDefault()"
+     [ngStyle]="{ 'width': sizeInRems + 'rem', 'height': sizeInRems + 'rem' }"/>
