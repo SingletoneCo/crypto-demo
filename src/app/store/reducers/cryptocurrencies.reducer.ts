@@ -3,7 +3,7 @@ import { createFeature, createReducer, createSelector, on } from '@ngrx/store';
 import * as CryptocurrenciesActions from '../actions/cryptocurrencies.action';
 
 
-/*I've included loaded and loading values, as in a normal project I would add them to all states and use them for displaying a loading bar / error message instead of the content.
+/*I've included loading value, as in a normal project I would add a one to all states and use it for displaying a loading bar instead of the content.
 I would create a reusable solution for that purpose*/
 export interface CryptocurrenciesState {
   cryptocurrencies: Cryptocurrency[],
