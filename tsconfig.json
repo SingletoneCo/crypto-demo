@@ -24,8 +24,7 @@
       "dom"
     ],
     "paths": {
-      "@shell": ["./src/app/shell/index.ts"],
-      "@currency": ["./src/app/currency/index.ts"]
+      "@shell": ["./src/app/shell/index.ts"]
     }
   },
   "angularCompilerOptions": {

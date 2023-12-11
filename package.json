@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "jest": {
     "preset": "jest-preset-angular",
-    "setupFilesAfterEnv": ["<rootDir>/src/setup-jest.ts"]
+    "setupFilesAfterEnv": ["<rootDir>/src/setup-jest.ts"],
+    "moduleNameMapper": {
+      "@shell": "<rootDir>/src/app/shell/index.ts"
+    }
   },
   "scripts": {
     "ng": "ng",

@@ -8,7 +8,7 @@ export class SpaceNumberDelimiterPipePipe implements PipeTransform {
 
   transform(value: number | string | null): string | null {
 
-    if (!value) {
+    if (!value && value !== 0) {
       return null;
     }
 

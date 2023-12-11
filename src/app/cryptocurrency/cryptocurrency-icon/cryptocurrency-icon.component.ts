@@ -11,8 +11,7 @@ import { AsyncPipe, LowerCasePipe, NgIf, NgOptimizedImage, NgStyle } from '@angu
     NgOptimizedImage,
     AsyncPipe,
   ],
-  templateUrl: './cryptocurrency-icon.component.html',
-  styleUrl: './cryptocurrency-icon.component.scss'
+  templateUrl: './cryptocurrency-icon.component.html'
 })
 export class CryptocurrencyIconComponent {
 

@@ -13,4 +13,11 @@ describe('CryptocurrenciesService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should return array of cryptocurrencies by getAll method called', () => {
+    const cryptocurrencies$ = service.getAll();
+    cryptocurrencies$.subscribe(value => {
+      expect(value.length).toEqual(20);
+    })
+  });
 });
