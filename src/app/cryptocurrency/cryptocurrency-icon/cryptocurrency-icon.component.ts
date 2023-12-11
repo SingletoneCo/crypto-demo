@@ -1,16 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { AsyncPipe, LowerCasePipe, NgIf, NgOptimizedImage, NgStyle } from '@angular/common';
+import { NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-cryptocurrency-icon',
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
-    LowerCasePipe,
-    NgStyle,
-    NgIf,
-    NgOptimizedImage,
-    AsyncPipe,
+    NgStyle
   ],
   templateUrl: './cryptocurrency-icon.component.html'
 })

@@ -31,7 +31,7 @@ describe('CurrencyListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display table', () => {
+  it('should render a table', () => {
     const { debugElement } = fixture;
     const table = debugElement.query(By.css('table'))
     expect(table).toBeTruthy();

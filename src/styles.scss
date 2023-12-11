@@ -34,7 +34,10 @@ $crypto-demo-theme: mat.define-light-theme((
 
 
 @import "./styles/theme-colors";
+@import "./styles/view";
 @import "./styles/tables";
+@import "./styles/buttons";
+@import "./styles/expansion-panels";
 
 
 html, body { height: 100%; }
@@ -45,27 +48,8 @@ body {
   margin: 0 10vw;
 }
 
-.mdc-button__label {
-  font-size: 1rem;
-}
 
-.page-title {
-  margin: 2rem 0 0.7rem 0;
-  font-size: 2.25rem;
-  font-weight: 900;
-  color: $theme-black;
-  display: flex;
-  justify-content: center;
-}
 
-.page-content {
-  margin-top: 4rem;
-}
-
-.mat-expansion-panel-header .mat-expansion-panel-header-title {
-  color: $theme-purple;
-  font-weight: 500;
-}
 
 
 
